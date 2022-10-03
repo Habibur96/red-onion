@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import logo from '../../images/logo2.png';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 import { useNavigate } from 'react-router-dom';
 import { async } from '@firebase/util';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const SignUp = () => {
 
     const [
@@ -54,11 +55,20 @@ const SignUp = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
 
-                    <Form.Control type="password" name="password" placeholder="Password" required />
+                    <Form.Control type="password" name="password" placeholder="Confirm Password" required />
                 </Form.Group>
-                <button type="submit" class="btn btn-danger btn-lg"> Register</button>
 
-            </Form>
+                <div class="align-items-start d-flex align-items-start">
+
+                    <Button type="submit" class="btn btn-lg btn-danger"> Register</Button>
+                </div>
+
+
+
+            </Form >
+
+            <SocialLogin></SocialLogin>
+
 
 
         </div >
